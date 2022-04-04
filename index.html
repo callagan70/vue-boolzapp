@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>BoolApp</title>
+</head>
+<body>
+
+<div id="root">
+<div class="central">
+
+        <!-- SECTION Sinistra -->
+
+<div class="central_left">
+
+<!-- SECTION Il mio profilo -->
+    <div class="central_left_header">
+        <div class="me">
+            <img v-bind:src="profile.avatar" alt="">
+            <div>{{profile.name}}</div>
+        </div>
+        <div>
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <!-- <i class="fa-solid fa-bell-slash"></i> -->
+            <!-- <i class="fa-solid fa-plus"></i> -->
+        </div>
+    </div>
+<!-- !SECTION Il mio profilo fine-->
+
+<!-- SECTION Notifiche -->
+    <div class="notifiche">
+        <div class="notifiche_bell" >
+            <i class="fa-solid fa-bell-slash"></i>
+        </div>
+        <div>
+            <h4>Ricevi notifiche di nuovi messaggi</h4>
+            <h5>Attiva notifiche desktop</h5>
+        </div>
+    </div>
+<!-- !SECTION Notifiche fine -->
+
+<!-- SECTION Search -->
+<div class="central_left_search">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div>
+        <input type="text">
+    </div>
+</div>
+<!-- !SECTION Search -->
+
+<!-- SECTION Guest -->
+<div id="guest"></div>
+<div class="guest_slot" v-for="guest in contacts">
+    <div>
+        <img v-bind:src="guest.avatar" alt="Guest Image">
+    </div>
+    <div>
+        {{guest.name}}
+    </div>
+</div>
+</div>
+        <!-- !SECTION Sinistra fine-->
+
+<!-- SECTION destra-->
+<div class="central_right">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>

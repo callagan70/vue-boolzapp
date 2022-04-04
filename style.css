@@ -1,0 +1,147 @@
+/* Inizio Utility */
+*{Padding: 0;
+    Margin: 0;
+    Box-sizing: border-box}
+         
+  .clearfix::after{
+   content: "";
+   display: table;
+   clear: both;}
+
+  /* html {
+   scroll-behavior: smooth;}
+   /* Fine Utility */
+
+   body{
+       font-family: Arial, Helvetica, sans-serif;
+       background-image: linear-gradient(
+            #009680 0px,
+            #009680 15vh,
+            #dddbd1 15vh,
+            #d2dbdc 100%
+    );
+}
+
+   /* header{
+    background-color: green;
+    width: 100%;
+    height: 10vh;
+   } */
+
+   /* main{
+       background-color: red;
+       width: 100%;
+       height: 90vh;
+   } */ 
+
+   #root{
+        /* width: 100%;
+        height: 100vh; */
+        position: relative;
+   }
+
+   .central{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 90%;
+    height: 90vh;
+    border: 2px solid black;
+    top: 50px;
+    left: 5%;
+    right: 5%;
+   }
+
+.central_left{
+    width: 30%;
+    height: 100%;
+}
+
+.central_right{
+    width: 70%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.central_left_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 10%;
+    background-color: azure;
+}
+
+.me{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 2em;
+}
+
+.central_left_header>div>img{
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.central_left_header>div>i{
+    font-size: 1em;
+    opacity: 0.5;
+    margin-right: 0.5em;
+}
+
+.central_left_search{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    height: 5%;
+    margin: 10px auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.central_left_search>div>input{
+    width: 240%; 
+    border: none;
+}
+
+.central_left_search>div>i{
+    opacity: 0.5;
+    margin-right: 15px;
+}
+
+.notifiche{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    background-color: #99DAFD;
+    height: 10vh;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.notifiche_bell{
+    font-size: 3em;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    color: #99DAFD;
+}
+
+.guest_slot{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.guest_slot>div>img{
+    width: 50px;
+    padding: 10px 0px 10px 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
