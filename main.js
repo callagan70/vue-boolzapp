@@ -172,14 +172,20 @@ var app = new Vue(
                     }
                 ],
             }
-        ]
+        ],
 
+      guestImg: 0,
+      
+    },
 
-
-        },
-        
-        
         methods:{
+
+          guestRight: function (element){
+            // console.log(element)
+            guestImg = element
+            console.log('guestImg: ' + guestImg)
+            return guestImg
+          },
 
 
 
