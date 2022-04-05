@@ -80,6 +80,8 @@ v-for="(guest, index) in contacts"
 
 
 <!-- SECTION destra-->
+
+<!-- SECTION header destro -->
 <div class="central_right">
     <div class="central_right_header">
         <div>        
@@ -91,13 +93,37 @@ v-for="(guest, index) in contacts"
             <i class="fa-solid fa-ellipsis-vertical"></i> 
         </div>
     </div>
+<!-- !SECTION header destro fine-->
+
+<!-- SECTION middel destro -->
     <div class="central_right_middle">
-        <p v-for="(guestMes, index) in contacts[guestImg].messages">
+        <div v-for="(guestMes, index) in contacts[guestImg].messages"
+            v-bind:class="(guestMes.status == 'sent' ) ? 'ms_sent' : 'ms_recive' "
+        >
             {{guestMes.message}}
-        </p>
+        </div>
     </div>
+<!-- !SECTION middel destro fine-->
 
 
+<!-- SECTION footer destro -->
+    <div class="central_right_footer">
+        <div>
+            <i class="fa-solid fa-face-smile"></i>
+        </div>
+        <div>
+            <input 
+                type="text"
+                placeholder="Scrivi un messaggio"
+                v-model="nextMess"
+                @keyup.enter="addMess"
+                >
+        </div>
+        <div>
+            <i class="fa-solid fa-microphone"></i>
+        </div>
+    </div>
+<!-- !SECTION footer destro fine-->
 
 
 

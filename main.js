@@ -147,6 +147,11 @@ var app = new Vue(
                         date: '10/01/2020 15:50:00',
                         message: 'Grazie per avermelo ricordato, le scrivo subito!',
                         status: 'received'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Fatto!',
+                        status: 'received'
                     }
                 ],
             },
@@ -180,10 +185,22 @@ var app = new Vue(
 
         methods:{
 
-          guestRight: function (element){
+        guestRight: function (element){
             this.guestImg = element
             console.log('guestImg: ' + this.guestImg)
-          },
+        },
+
+        addMess: function (){
+            let newMess = 
+                {
+                date: '10/01/2020 15:51:00',
+                message: this.nextMess,
+                status: 'sent'
+                }
+        
+            this.contact[guestImg].messages.push(newMess)
+        
+          }
 
 
 
