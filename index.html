@@ -82,9 +82,20 @@ v-for="(guest, index) in contacts"
 <!-- SECTION destra-->
 <div class="central_right">
     <div class="central_right_header">
-                <img v-bind:src="`${contacts[guestImg].avatar}`" alt="Immagine">
+        <div>        
+            <img v-bind:src="contacts[guestImg].avatar" alt="Immagine">
+        </div>
+        <div>
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i> 
+        </div>
     </div>
-
+    <div class="central_right_middle">
+        <p v-for="(guestMes, index) in contacts[guestImg].messages">
+            {{guestMes.message}}
+        </p>
+    </div>
 
 
 

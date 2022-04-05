@@ -181,7 +181,6 @@ var app = new Vue(
         methods:{
 
           guestRight: function (element){
-            // console.log(element)
             this.guestImg = element
             console.log('guestImg: ' + this.guestImg)
           },

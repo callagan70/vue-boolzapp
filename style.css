@@ -62,14 +62,16 @@
 }
 
 .central_left_header>div>img,
-.central_right>div>img
+.central_right_header>div>img
 {
     width: 50px;
     border-radius: 50px;
     margin-right: 10px;
 }
 
-.central_left_header>div>i{
+.central_left_header>div>i,
+.central_right_header>div>i
+{
     font-size: 1em;
     opacity: 0.5;
     margin-right: 0.5em;
@@ -143,3 +145,8 @@
     width: 70%;
 }
 
+.central_right_middle{
+    width: 100%;
+    height: 80%;
+    border: 1px solid black;
+}
