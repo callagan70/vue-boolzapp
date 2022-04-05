@@ -14,12 +14,13 @@
 
    body{
        font-family: Arial, Helvetica, sans-serif;
-       background-image: linear-gradient(
+       background-image: linear-gradient(to bottom,
             #009680 0px,
             #009680 15vh,
             #dddbd1 15vh,
             #d2dbdc 100vh
     );
+        height: 100vh;
 }
 
 .central{

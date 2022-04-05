@@ -78,12 +78,11 @@ v-for="(guest, index) in contacts"
 </div>
 <!-- !SECTION Sinistra fine-->
 
+
 <!-- SECTION destra-->
 <div class="central_right">
     <div class="central_right_header">
-        <img v-bind:src=" contacts[guestImg].avatar " alt="Guest Img">
-
-
+                <img v-bind:src="`${contacts[guestImg].avatar}`" alt="Immagine">
     </div>
 
 
@@ -126,6 +125,7 @@ v-for="(guest, index) in contacts"
 
 
 </div>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="./main.js"></script>
 </body>
