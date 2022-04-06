@@ -2,7 +2,7 @@ var app = new Vue(
     {
         el: '#root',
         data: {
-
+// SECTION DATA
           profile: {
             name: 'Angelo',
             avatar: './img/1.jpg'
@@ -180,9 +180,11 @@ var app = new Vue(
         ],
 
         guestImg: 0,
-      
+        nextMess: " ",
     },
+// !SECTION DATA Fine
 
+// SECTION Methods
         methods:{
 
         guestRight: function (element){
@@ -198,11 +200,10 @@ var app = new Vue(
                 status: 'sent'
                 }
         
-            this.contact[guestImg].messages.push(newMess)
+            this.contacts[this.guestImg].messages.push(newMess)
         
           }
-
-
-
         },
+
+    // !SECTION Methods fine
       })
