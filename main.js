@@ -9,7 +9,6 @@ var app = new Vue(
 
           },
 
-
           contacts: [
             {
                 name: 'Michele',
@@ -189,33 +188,43 @@ var app = new Vue(
 
         guestRight: function (element){
             this.guestImg = element
-            console.log('guestImg: ' + this.guestImg)
         },
 
         addMess: function (){
+
+            let giorno = dayjs().format('DD/MM/YYYY');
+            let ora = dayjs().get('hour');
+            let minuti= dayjs().get('minute');
+
+            // if (this.minute <= 10) {
+            //     this.minute = " '0' + ${this.minute} ";
+            // }
+
             let newMess = 
                 {
-                date: '10/01/2020 15:51:00',
+                date: `${giorno} ${ora}:${minuti} `,
                 message: this.nextMess,
                 status: 'sent'
                 }
             
                 let newMessOk = 
                 {
-                date: '10/01/2020 15:51:00',
+                date: `${giorno} ${ora}:${minuti} `,
                 message: 'Ok',
                 status: 'received'
                 }
 
             this.nextMess = ' '
+
             this.contacts[this.guestImg].messages.push(newMess)
+
             setTimeout(
                 () => {
                     this.contacts[this.guestImg].messages.push(newMessOk)  
                 }, 1000)
         
           },
-          
+
         },
 
     // !SECTION Methods fine

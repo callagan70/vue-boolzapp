@@ -13,10 +13,8 @@
 <body>
 
 
-<!-- Usare filter per la ricerca dei contatti oppure includes trasformare le lettere in lowercase @keyup. e basta - pointer click in CSS - role="button" con bootstrap
+<!-- NOTE Usare filter per la ricerca dei contatti oppure includes trasformare le lettere in lowercase @keyup. e basta
 -->
-
-
 
 <div id="root">
 
@@ -38,6 +36,7 @@
             <i class="fa-solid fa-ellipsis-vertical"></i>
             <!-- <i class="fa-solid fa-bell-slash"></i> -->
             <!-- <i class="fa-solid fa-plus"></i> -->
+            <!-- <i class="fa-solid fa-paperclip"></i> -->
         </div>
     </div>
 <!-- !SECTION Il mio profilo fine-->
@@ -67,21 +66,35 @@
 
 <!-- SECTION Guest -->
 <div id="guest">
-<div class="guest_slot"
-v-for="(guest, index) in contacts"
-@click="guestRight(index)">
 
-    <div>
-        <img v-bind:src="guest.avatar" alt="Guest Image">
+    <div class="guest_slot"
+    v-for="(guest, index) in contacts"
+    @click="guestRight(index)">
+        <div class="guest_slot_left">
+            <div>
+                <img v-bind:src="guest.avatar" alt="Guest Image">
+            </div>
+
+            <div>
+                {{guest.name}}
+            </div>
+        </div>
+
+        <div class="guest_slot_right"
+        >
+            <div>
+                {{guest.messages[0].message}}
+            </div>
+            <div>
+            <i>{{guest.messages[0].date}}</i>
+            </div>
+        </div>
+
     </div>
 
-    <div>
-        {{guest.name}}
-    </div>
-
 </div>
 </div>
-</div>
+<!-- !SECTION Guest Fine-->
 <!-- !SECTION Sinistra fine-->
 
 
@@ -95,7 +108,7 @@ v-for="(guest, index) in contacts"
         </div>
         <div>
             <i class="fa-solid fa-circle-notch"></i>
-            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-paperclip"></i>
             <i class="fa-solid fa-ellipsis-vertical"></i> 
         </div>
     </div>
@@ -106,7 +119,8 @@ v-for="(guest, index) in contacts"
         <div v-for="(guestMes, index) in contacts[guestImg].messages"
             v-bind:class="(guestMes.status == 'sent' ) ? 'ms_sent' : 'ms_recive' "
         >
-            {{guestMes.message}}
+            <div>{{guestMes.message}}</div>
+            <div class="central_right_middle_2"><i> {{guestMes.date}}</i></div>
         </div>
     </div>
 <!-- !SECTION middel destro fine-->
