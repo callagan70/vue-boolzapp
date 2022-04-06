@@ -238,3 +238,15 @@
     border-radius: 10px;
     margin-left: 10%;
 }
+
+.drop_menu_mess_0{
+    display: none;
+}
+
+.drop_menu_mess_1{
+    display: block;
+    background-color: red;
+    height: fit-content;
+    width: fit-content;
+    z-index: 1;
+}

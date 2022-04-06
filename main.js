@@ -242,8 +242,6 @@ var app = new Vue(
 
           dropMenuF: function(){
             
-            // this.dropMenuIndex = 1;
-           
             if (this.dropMenuIndex == 1)
             {
                 this.dropMenuIndex = 0
@@ -253,6 +251,7 @@ var app = new Vue(
             }
 
             
+
 
 
         }

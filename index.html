@@ -137,13 +137,25 @@
             <div>{{guestMes.message}}
                 <i 
                     @click="dropMenuF()"
-                    :class="dropMenu[`${dropMenuIndex}`].classMenu"
+                    v-bind:class="dropMenu[`${dropMenuIndex}`].classMenu"
                 >
                 </i>
+            <div v-bind:class="(dropMenuIndex == 0) ? 'drop_menu_mess_0' : 'drop_menu_mess_1' ">
+
+                <div>
+                    Info
+                </div>
+                <div>
+                    Cancellazione
+                </div>
+
+            </div>
+
             </div>
             <div class="central_right_middle_2"><i> {{guestMes.date}}</i></div>
         </div>
     </div>
+    
 <!-- !SECTION middel destro fine-->
 
 
