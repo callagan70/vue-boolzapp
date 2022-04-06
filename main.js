@@ -180,6 +180,19 @@ var app = new Vue(
 
         guestImg: 0,
         nextMess: " ",
+        dropMenuIndex: 0,
+
+        dropMenu: [
+            {
+                classMenu: 'fa-solid fa-angle-down',
+                statusMenu: true
+            },
+            {
+                classMenu: 'fa-solid fa-angle-up',
+                statusMenu: false
+            }
+        ],
+
     },
 // !SECTION DATA Fine
 
@@ -196,6 +209,8 @@ var app = new Vue(
             let ora = dayjs().get('hour');
             let minuti= dayjs().get('minute');
 
+            // FIXME fissare i muniti se inferiore a 10
+            
             // if (this.minute <= 10) {
             //     this.minute = " '0' + ${this.minute} ";
             // }
@@ -207,7 +222,7 @@ var app = new Vue(
                 status: 'sent'
                 }
             
-                let newMessOk = 
+            let newMessOk = 
                 {
                 date: `${giorno} ${ora}:${minuti} `,
                 message: 'Ok',
@@ -221,9 +236,26 @@ var app = new Vue(
             setTimeout(
                 () => {
                     this.contacts[this.guestImg].messages.push(newMessOk)  
-                }, 1000)
+                }, 2000)
         
           },
+
+          dropMenuF: function(){
+            
+            // this.dropMenuIndex = 1;
+           
+            if (this.dropMenuIndex == 1)
+            {
+                this.dropMenuIndex = 0
+            }
+            else{
+                this.dropMenuIndex =1
+            }
+
+            
+
+
+        }
 
         },
 

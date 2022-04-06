@@ -45,7 +45,8 @@
 }
 
 .central_left_header,
-.central_right_header{
+.central_right_header,
+.central_right_header_1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,8 +63,7 @@
 }
 
 .central_left_header>div>img,
-.central_right_header>div>img
-{
+.central_right_header>div>div>img{
     width: 50px;
     border-radius: 50px;
     margin-right: 10px;

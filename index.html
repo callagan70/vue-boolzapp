@@ -80,6 +80,7 @@
             </div>
         </div>
 
+ <!-- FIXME da sistemare l'ultimo messaggio -->
         <div class="guest_slot_right"
         >
             <div>
@@ -103,14 +104,25 @@
 <!-- SECTION header destro -->
 <div class="central_right">
     <div class="central_right_header">
-        <div>        
-            <img v-bind:src="contacts[guestImg].avatar" alt="Immagine">
+        <div class="central_right_header_1">
+
+            <div>     
+                <img v-bind:src="contacts[guestImg].avatar" alt="Immagine">
+            </div>
+<!-- FIXME - da selezionare solo l'ora e non la data -->
+            <div>
+                <div>{{contacts[guestImg].name}}</div>
+                <div> Ultimo accesso:  {{contacts[guestImg].messages[0].date}}</div>
+            </div>
+
         </div>
+
         <div>
             <i class="fa-solid fa-circle-notch"></i>
             <i class="fa-solid fa-paperclip"></i>
             <i class="fa-solid fa-ellipsis-vertical"></i> 
         </div>
+
     </div>
 <!-- !SECTION header destro fine-->
 
@@ -119,7 +131,16 @@
         <div v-for="(guestMes, index) in contacts[guestImg].messages"
             v-bind:class="(guestMes.status == 'sent' ) ? 'ms_sent' : 'ms_recive' "
         >
-            <div>{{guestMes.message}}</div>
+
+    <!-- FIXME - Da aggiungere drop down per la cancellazione -->
+
+            <div>{{guestMes.message}}
+                <i 
+                    @click="dropMenuF()"
+                    :class="dropMenu[`${dropMenuIndex}`].classMenu"
+                >
+                </i>
+            </div>
             <div class="central_right_middle_2"><i> {{guestMes.date}}</i></div>
         </div>
     </div>
