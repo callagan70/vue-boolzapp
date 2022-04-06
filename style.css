@@ -130,6 +130,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    cursor: -webkit-grab;
+    cursor: pointer;
+}
+
+.guest_slot:hover{
+    color: red;
 }
 
 .guest_slot>div>img{
@@ -149,6 +155,7 @@
     width: 100%;
     height: 80%;
     border: 1px solid black;
+
 }
 
 .central_right_footer{

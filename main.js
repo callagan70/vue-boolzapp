@@ -199,10 +199,23 @@ var app = new Vue(
                 message: this.nextMess,
                 status: 'sent'
                 }
-        
+            
+                let newMessOk = 
+                {
+                date: '10/01/2020 15:51:00',
+                message: 'Ok',
+                status: 'received'
+                }
+
+            this.nextMess = ' '
             this.contacts[this.guestImg].messages.push(newMess)
+            setTimeout(
+                () => {
+                    this.contacts[this.guestImg].messages.push(newMessOk)  
+                }, 1000)
         
-          }
+          },
+          
         },
 
     // !SECTION Methods fine
