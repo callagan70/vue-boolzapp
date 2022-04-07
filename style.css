@@ -130,7 +130,7 @@
 
 }
 
-.guest_slot{
+.guest_slot>div{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -143,7 +143,7 @@
     color: red;
 }
 
-.guest_slot>div>div>img{
+.guest_slot>div>div>div>img{
     width: 50px;
     padding: 10px 0px 10px 10px;
     margin-right: 10px;
@@ -163,6 +163,10 @@
     font-size: 0.7em;
     opacity: 0.7;
     margin-right: 10px;
+}
+
+.display_none{
+    display: none;
 }
 
 .central_right{
@@ -204,7 +208,7 @@
     margin-left: 16px;
     padding: 5px;
     border-radius: 10px;
-    /* z-index: 10; */
+    z-index: 10;
 }
 
 .drop_menu_align{

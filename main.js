@@ -186,6 +186,7 @@ var app = new Vue(
         guestImg: 0,
         nextMess: " ",
         dropMenuIndex: 0,
+        guestsearch: "",
 
 // !SECTION Variabili generiche fine
 
@@ -201,7 +202,8 @@ var app = new Vue(
         ],
 
     },
-// !SECTION DATA Fine
+
+// !SECTION data fine
 
 // SECTION Methods
         methods:{
@@ -251,7 +253,7 @@ var app = new Vue(
         
           },
 
-        //   NOTE Funzione per il dropMenuF
+//   NOTE Funzione per il dropMenuF
 
           dropMenuF: function(){
             
@@ -264,21 +266,38 @@ var app = new Vue(
             }
             },
 
-        //   NOTE Funzione per eliminare il messaggio
-            
+//   NOTE Funzione per eliminare il messaggio
+        //   FIXME Da sistemare quando e' l'ultimo
+        
             removeLista: function(indexLista){
-                let guestIndex = this.guestImg
-                console.log('Indice della lista dei messaggi ' + indexLista)
-                console.log(guestIndex, this.guestImg)
-                console.log(this.contacts[guestIndex].name)
-                console.log(this.contacts[guestIndex].messages)
-                console.log(this.contacts[guestIndex].messages[indexLista])
-                this.contacts[guestIndex].messages.splice(indexLista, 1)
+                console.log(indexLista)
+                // let guestIndex = this.guestImg
+                this.contacts[this.guestImg].messages.splice(indexLista, 1)
             },
 
+// NOTE Funzione per la ricerca dei contatti
 
+            search: function(element){
+                let h = this.contacts.length - 1
+                let controlName = ' '
+                console
+                console.log('H: ' + h)
+                console.log('Stringa' + this.contacts.length)
+                console.log('testo: ' + element)
 
-    
+                for (i = 0; i <= h ; i++)
+                {
+                    this.controlName = this.contacts[i].name.include(element)
+                    console.log('For: ' + i)
+                    console.log('Nome: ' + this.contacts[i].name)
+                    if (controlName == false) {
+                         this.contacts[i].visible = false
+                    }
+                }
+            
+            
+            },
+
 
         },
 

@@ -54,12 +54,13 @@
 <!-- !SECTION Notifiche fine -->
 
 <!-- SECTION Search -->
+
 <div class="central_left_search">
     <div>
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     <div>
-        <input type="text">
+        <input @keyup="search(guestsearch)" type="text" v-model="guestsearch">
     </div>
 </div>
 <!-- !SECTION Search -->
@@ -68,8 +69,12 @@
 <div id="guest">
 
     <div class="guest_slot"
+    v-bind:class="(guest.visible == false) ? 'display_none' : ' ' "
     v-for="(guest, index) in contacts"
     @click="guestRight(index)">
+
+    <!-- v-if="guest.visible = true" -->
+    <div>
         <div class="guest_slot_left">
             <div>
                 <img v-bind:src="guest.avatar" alt="Guest Image">
@@ -90,8 +95,9 @@
             <i>{{guest.messages[0].date}}</i>
             </div>
         </div>
-
     </div>
+    </div>
+    <!-- <div v-else=""></div> -->
 
 </div>
 </div>
@@ -108,7 +114,9 @@
         <div class="central_right_header_1">
 
             <div>     
-                <img v-bind:src="contacts[guestImg].avatar" alt="Immagine">
+                <img
+                v-bind:src="contacts[guestImg].avatar"
+                alt="Immagine">
             </div>
 <!-- FIXME - da selezionare solo l'ora e non la data -->
             <div>
@@ -131,7 +139,7 @@
 
 <!-- SECTION middel destro -->
 
-    <div class="central_right_middle">
+<div class="central_right_middle">
 
 <!-- NOTE la classe da elimnare "guest_mess" -->
     
@@ -155,22 +163,17 @@
             </div>
 
             <div v-bind:class="(dropMenuIndex == 0) ? 'drop_menu_mess_0' : 'drop_menu_mess_1' ">
-
                 <div @click="removeLista(index)">
                     Cancellazione
                 </div>
-
                 <div>
                     Info
                 </div>
-                
             </div>
-
+            
         </div>
     </div>
-
-
-    </div>
+</div>
     
 <!-- !SECTION middel destro fine-->
 
