@@ -185,11 +185,11 @@ var app = new Vue(
         dropMenu: [
             {
                 classMenu: 'fa-solid fa-angle-down',
-                statusMenu: true
+                // statusMenu: true
             },
             {
                 classMenu: 'fa-solid fa-angle-up',
-                statusMenu: false
+                // statusMenu: false
             }
         ],
 
@@ -209,7 +209,7 @@ var app = new Vue(
             let ora = dayjs().get('hour');
             let minuti= dayjs().get('minute');
 
-            // FIXME fissare i muniti se inferiore a 10
+            // FIXME fissare i minuti se inferiore a 10
             
             // if (this.minute <= 10) {
             //     this.minute = " '0' + ${this.minute} ";
@@ -250,7 +250,7 @@ var app = new Vue(
                 this.dropMenuIndex =1
             }
 
-            
+
 
 
 
