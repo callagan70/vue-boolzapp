@@ -133,29 +133,42 @@
 
     <div class="central_right_middle">
 
-        <div v-for="(guestMes, index) in contacts[guestImg].messages"
-            v-bind:class="(guestMes.status == 'sent' ) ? 'ms_sent' : 'ms_recive' ">
+<!-- NOTE la classe da elimnare "guest_mess" -->
+    
+    <div
+        id="guest_mess"
+        v-for="(guestMes, index) in contacts[guestImg].messages"
+        v-bind:class="(guestMes.status == 'sent' ) ? 'ms_sent' : 'ms_recive' ">
 
-            <div class="drop_menu_mess">
-                <div>{{guestMes.message}}
-                    <i @click="dropMenuF()" v-bind:class="dropMenu[`${dropMenuIndex}`].classMenu"></i>
+        <div class="drop_menu_align">
+
+            <div>
+                <div class="drop_menu_mess">
+                    <div>{{guestMes.message}}
+                        <i @click="dropMenuF()" v-bind:class="dropMenu[`${dropMenuIndex}`].classMenu"></i>
+                    </div>
+                </div>
+
+                <div class="central_right_middle_2">
+                    <i>{{guestMes.date}}</i>
                 </div>
             </div>
 
-            <div class="central_right_middle_2">
-                <i>{{guestMes.date}}</i>
+            <div v-bind:class="(dropMenuIndex == 0) ? 'drop_menu_mess_0' : 'drop_menu_mess_1' ">
+
+                <div @click="removeLista(index)">
+                    Cancellazione
+                </div>
+
+                <div>
+                    Info
+                </div>
+                
             </div>
 
         </div>
+    </div>
 
-        <div v-bind:class="(dropMenuIndex == 0) ? 'drop_menu_mess_0' : 'drop_menu_mess_1' ">
-            <div>
-                Cancellazione
-            </div>
-            <div>
-                Info
-            </div>
-        </div>
 
     </div>
     

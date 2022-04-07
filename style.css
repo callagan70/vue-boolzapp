@@ -198,10 +198,18 @@
 
 .drop_menu_mess_1{
     display: block;
-    background-color: red;
+    background-color: whitesmoke;
     height: fit-content;
     width: fit-content;
+    margin-left: 16px;
+    padding: 5px;
+    border-radius: 10px;
     /* z-index: 10; */
+}
+
+.drop_menu_align{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* !SECTION Central Middel fine*/

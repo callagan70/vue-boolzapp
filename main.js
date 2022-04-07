@@ -1,12 +1,13 @@
 var app = new Vue(
     {
         el: '#root',
-        data: {
+
 // SECTION DATA
+
+        data: {
           profile: {
             name: 'Angelo',
             avatar: './img/1.jpg'
-
           },
 
           contacts: [
@@ -178,9 +179,15 @@ var app = new Vue(
             }
         ],
 
+// !SECTION DATA fine
+
+// SECTION Variabili generiche
+
         guestImg: 0,
         nextMess: " ",
         dropMenuIndex: 0,
+
+// !SECTION Variabili generiche fine
 
         dropMenu: [
             {
@@ -199,9 +206,13 @@ var app = new Vue(
 // SECTION Methods
         methods:{
 
-        guestRight: function (element){
+//   NOTE Funzione per selezionare il contacts
+        
+       guestRight: function (element){
             this.guestImg = element
         },
+
+//   NOTE Funzione per il inserire il messaggio
 
         addMess: function (){
 
@@ -240,6 +251,8 @@ var app = new Vue(
         
           },
 
+        //   NOTE Funzione per il dropMenuF
+
           dropMenuF: function(){
             
             if (this.dropMenuIndex == 1)
@@ -249,12 +262,23 @@ var app = new Vue(
             else{
                 this.dropMenuIndex =1
             }
+            },
+
+        //   NOTE Funzione per eliminare il messaggio
+            
+            removeLista: function(indexLista){
+                let guestIndex = this.guestImg
+                console.log('Indice della lista dei messaggi ' + indexLista)
+                console.log(guestIndex, this.guestImg)
+                console.log(this.contacts[guestIndex].name)
+                console.log(this.contacts[guestIndex].messages)
+                console.log(this.contacts[guestIndex].messages[indexLista])
+                this.contacts[guestIndex].messages.splice(indexLista, 1)
+            },
 
 
 
-
-
-        }
+    
 
         },
 
