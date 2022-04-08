@@ -277,24 +277,28 @@ var app = new Vue(
 
 // NOTE Funzione per la ricerca dei contatti
 
-            search: function(element){
+            search: function(){
                 let h = this.contacts.length - 1
                 let controlName = ' '
                 console
                 console.log('H: ' + h)
                 console.log('Stringa' + this.contacts.length)
-                console.log('testo: ' + element)
+                console.log('testo: ' + this.guestsearch)
 
-                for (i = 0; i <= h ; i++)
-                {
-                    this.controlName = this.contacts[i].name.include(element)
+                for (let i = 0; i <= h ; i++)
+                { 
+                    controlName = this.contacts[i].name.includes(this.guestsearch)
                     console.log('For: ' + i)
                     console.log('Nome: ' + this.contacts[i].name)
-                    if (controlName == false) {
-                         this.contacts[i].visible = false
-                    }
+                    console.log('Visibilita: ' + controlName);
+                    
+                    if (controlName == false && ) {
+                        this.contacts[i].visible = false
+                     }  
+
                 }
-            
+
+//  Case sensitive lowercase
             
             },
 

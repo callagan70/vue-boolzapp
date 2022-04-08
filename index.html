@@ -60,7 +60,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     <div>
-        <input @keyup="search(guestsearch)" type="text" v-model="guestsearch">
+        <input @keyup="search()" type="text" v-model="guestsearch">
     </div>
 </div>
 <!-- !SECTION Search -->
@@ -85,11 +85,10 @@
             </div>
         </div>
 
- <!-- FIXME da sistemare l'ultimo messaggio -->
         <div class="guest_slot_right"
         >
             <div>
-                {{guest.messages[0].message}}
+                {{guest.messages[guest.messages.length - 1].message}}
             </div>
             <div>
             <i>{{guest.messages[0].date}}</i>
